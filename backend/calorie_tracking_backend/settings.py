@@ -38,9 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "apps.auth",
-    "apps.conversations",
-    "apps.messages",
+    "apps.authentication",
+    "apps.registry",
 ]
 
 MIDDLEWARE = [
@@ -86,6 +85,8 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
+
+AUTH_USER_MODEL = "authentication.User"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
