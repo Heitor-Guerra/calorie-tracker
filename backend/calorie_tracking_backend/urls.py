@@ -23,4 +23,5 @@ urlpatterns = [
     path("user/", include("apps.authentication.urls")),
     path("food/", include("apps.food.urls")),
     path("logs/", include("apps.daily_log.urls")),
+    path("csrf/", include("csrf.urls")),
 ]

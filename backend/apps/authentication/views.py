@@ -175,7 +175,7 @@ def delete_view(request):
     except Exception:
         return Response(
             {
-                "message": "Could not delete the user",
+                "message": "Coud not delete the user",
             },
             status=HTTP_400_BAD_REQUEST,
         )
