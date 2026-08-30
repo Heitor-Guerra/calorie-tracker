@@ -67,7 +67,7 @@ function LogDetails({
           >
             {log.entries.map((entry, index) => (
               <Box key={`${entry.food.name}-${index}`}>
-                <ListItem disableGutters className="py-4">
+                <ListItem disableGutters className="py-4 p-3">
                   <EntryDetails entry={entry} />
                 </ListItem>
 

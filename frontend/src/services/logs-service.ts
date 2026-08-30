@@ -33,3 +33,27 @@ export async function getUsersLogs(): Promise<DailyLog[]> {
 
   return response.json() as Promise<DailyLog[]>;
 }
+
+
+export async function uploadImageToLog(file: File): Promise<DailyLog> {
+  const csrfT = await csrf();
+
+  const formData: FormData = new FormData();
+  formData.append("image", file);
+
+  const response = await fetch(`${API_URL}/upload`,  {
+    credentials: "include",
+    method: "POST",
+    headers: {
+      "X-CSRFToken": csrfT,
+    },
+    body: formData,
+  });
+
+
+  if (!response.ok) {
+    throw new Error("The user is not logged.");
+  }
+
+  return response.json() as Promise<DailyLog>;
+}
