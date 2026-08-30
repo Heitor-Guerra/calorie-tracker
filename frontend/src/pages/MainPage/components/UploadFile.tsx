@@ -44,14 +44,14 @@ function UploadFile() {
         <Box className="p-6">
           {!log ? (
             <Box className=" rounded-2xl">
-              <Typography className="m-3 p-3 my-2 text-sm text-slate-500">
+              <Typography className="my-2 text-sm text-slate-500">
                 Click to browse files
               </Typography>
 
-              <input type="file" className="border border-stone-400 m-3 p-3 flex w-fit cursor-pointer" onChange={handleFileChange} />
+              <input type="file" className="border border-stone-400 mt-3 mb-3 p-3 flex w-fit cursor-pointer" onChange={handleFileChange} />
               <Button
                 variant="contained"
-                className="m-3 rounded-xl px-5 py-2.5 normal-case"
+                className=""
                 onClick={uploadImage}>
                 Choose image
               </Button>
