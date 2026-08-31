@@ -1,75 +1,110 @@
-# React + TypeScript + Vite
+# Calorie Tracker Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend application for a calorie tracker built with Vite, React, TypeScript, and Material UI.
 
-Currently, two official plugins are available:
+-----------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Requirements
 
-## React Compiler
+- Node.js 24 
+- Package manager (npm, yarn, etc...)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-----------
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Clone the repository and enter the project directory:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/Heitor-Guerra/calorie-tracker.git
+cd calorie-tracker/frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Install the dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+### npm
+```bash
+npm install
 ```
+
+### yarn
+```bash
+yarn install
+```
+
+-----------
+
+## Environment Variables
+
+Create a .env file in the root directory of the project:
+
+```env
+VITE_API_URL=http://127.0.0.1:8000
+```
+
+Update the API URL if the backend is running on a different host or port.
+
+-------------
+
+## Running the Application
+
+
+_From now on, all commands will be shown on npm. For other package manager, switch `npm run` for `yarn` or `pnpm_
+
+To start the Vite development server, run:
+
+```bash
+npm run dev
+```
+
+The application will, then, be available at:
+
+`
+http://localhost:5173/
+`
+
+--------------
+
+## Building for Production
+
+To create a production production build, run:
+
+```bash
+npm run build
+```
+
+The production files will be generated in the dist directory.
+
+------------
+
+## Previewing the Production Build
+
+After creating a production build, preview it locally:
+
+```bash
+npm run preview
+```
+
+The preview server will be available at the address displayed in the terminal.
+
+---------
+
+## Backend Connection
+
+Make sure the Calorie Tracker Backend is running before using features that require API access.
+
+By default, the frontend expects the backend API to be available at:
+
+`
+http://127.0.0.1:8000/
+`
+
+If the backend uses a different URL, update the VITE_API_URL value in the .env file and restart the development server.
+
+-----------
+
+## Advise
+
+The project is kind of unfinished. It would have some more things, like a page for the users to see their order, and a page for admins to Create, Edit and Delete items/categorie. 
+The Django admin dashboard works great, though.

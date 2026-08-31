@@ -2,7 +2,7 @@ import type { DailyLog } from "../types/daily-log"
 
 import { getCsrfToken, getCookie } from "./csrf-service"
 
-const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8080/logs";
+const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8080";
 
 export async function csrf(): Promise<string> {
   await getCsrfToken();
@@ -19,7 +19,7 @@ export async function csrf(): Promise<string> {
 export async function getUsersLogs(): Promise<DailyLog[]> {
   const csrfT = await csrf();
 
-  const response = await fetch(`${API_URL}`,  {
+  const response = await fetch(`${API_URL}/logs`,  {
     credentials: "include",
     method: "GET",
     headers: {
@@ -41,7 +41,7 @@ export async function uploadImageToLog(file: File): Promise<DailyLog> {
   const formData: FormData = new FormData();
   formData.append("image", file);
 
-  const response = await fetch(`${API_URL}/upload`,  {
+  const response = await fetch(`${API_URL}/logs/upload`,  {
     credentials: "include",
     method: "POST",
     headers: {

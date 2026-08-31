@@ -2,7 +2,7 @@ import type { UserRegister, User, UserLogin } from "../types/user"
 
 import { getCsrfToken, getCookie } from "./csrf-service"
 
-const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8080/user";
+const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8080";
 
 export async function csrf(): Promise<string> {
   await getCsrfToken();
@@ -19,7 +19,7 @@ export async function csrf(): Promise<string> {
 export async function getLoggedUser(): Promise<User> {
   const csrfT = await csrf();
 
-  const response = await fetch(`${API_URL}/logged-user`,  {
+  const response = await fetch(`${API_URL}/user/logged-user`,  {
     credentials: "include",
     method: "GET",
     headers: {
@@ -37,7 +37,7 @@ export async function getLoggedUser(): Promise<User> {
 export async function login(user: UserLogin): Promise<object> {
   const csrfT = await csrf();
 
-  const response = await fetch(`${API_URL}/login`,  {
+  const response = await fetch(`${API_URL}/user/login`,  {
     credentials: "include",
     method: "POST",
     headers: {
@@ -57,7 +57,7 @@ export async function login(user: UserLogin): Promise<object> {
 export async function register(user: UserRegister): Promise<object> {
   const csrfT = await csrf()
 
-  const response = await fetch(`${API_URL}/create`,  {
+  const response = await fetch(`${API_URL}/user/create`,  {
     credentials: "include",
     method: "POST",
     headers: {
@@ -77,7 +77,7 @@ export async function register(user: UserRegister): Promise<object> {
 export async function logout(): Promise<object> {
   const csrfT = await csrf();
 
-  const response = await fetch(`${API_URL}/login`,  {
+  const response = await fetch(`${API_URL}/user/login`,  {
     credentials: "include",
     method: "GET",
     headers: {
