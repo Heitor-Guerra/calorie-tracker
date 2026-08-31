@@ -2,7 +2,7 @@ import type { UserRegister, User, UserLogin } from "../types/user"
 
 import { getCsrfToken, getCookie } from "./csrf-service"
 
-const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000/user";
+const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8080/user";
 
 export async function csrf(): Promise<string> {
   await getCsrfToken();

@@ -2,7 +2,7 @@ import type { DailyLog } from "../types/daily-log"
 
 import { getCsrfToken, getCookie } from "./csrf-service"
 
-const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000/logs";
+const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8080/logs";
 
 export async function csrf(): Promise<string> {
   await getCsrfToken();
