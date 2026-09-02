@@ -1,8 +1,14 @@
 # Calorie Tracker
 
+_This project is unfinished! Please wait until I finish it to use._
+
 This repository is a training project created to practice Django and React development, and also Tensoflow neural networks training. It is not intended to provide full funcionality. More instructions on the other Readme's
 
 ---------
+
+
+
+
 
 ## Launch
 
@@ -31,11 +37,3 @@ localhost:8080
 `
 
 You can use it to manage application data.
-
-----------
-
-## Default Credentials
-
-There is already a superuser created:
-email: test@test.com
-password: Test5694@39gt
